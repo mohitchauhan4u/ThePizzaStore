@@ -1,8 +1,13 @@
+//import { BrowserRouter } from "react-router-dom";
 import "./App.css";
-import { Container } from "react-bootstrap";
+import TopBar from "./components/TopBar";
 
 function App() {
-  return <h1>A demo text</h1>;
+  return (
+    <>
+      <TopBar />
+    </>
+  );
 }
 
 export default App;
