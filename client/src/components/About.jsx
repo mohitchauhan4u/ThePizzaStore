@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 const About = () => {
   return (
-    <Container>
+    <Container style={{ marginTop: "50px" }}>
       <h1>Who we are?</h1>
       <p>
         Occaecat aliquip eu ex quis. Laborum eiusmod non nisi enim ullamco amet
