@@ -1,6 +1,7 @@
 import React from "react";
 import { Container, Row, Col, Table } from "react-bootstrap";
-
+import { BiPhoneCall } from "react-icons/bi";
+// Rember to add CountQueuingStrategy, State, distrcit wise serach filter for contact information
 const Contact = () => {
   return (
     <>
@@ -17,32 +18,57 @@ const Contact = () => {
               ullamco adipisicing nisi excepteur tempor qui exercitation. Et in
               velit non aliquip dolore quis irure duis consequat.
             </p>
-            <Table striped bordered hover>
+            <Table striped bordered hover className="text-center">
               <thead>
                 <tr>
-                  <th>#</th>
-                  <th>First Name</th>
-                  <th>Last Name</th>
-                  <th>Username</th>
+                  <th className="bg-warning text-center" colSpan={3}>
+                    Contact Details
+                  </th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>1</td>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>@mdo</td>
+                  <td>
+                    <BiPhoneCall />
+                  </td>
+                  <td>Phone</td>
+                  <td>9876543210</td>
                 </tr>
+              </tbody>
+              <tbody>
                 <tr>
-                  <td>2</td>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
-                  <td>@fat</td>
+                  <td>
+                    <BiPhoneCall />
+                  </td>
+                  <td>Phone</td>
+                  <td>9876543210</td>
                 </tr>
+              </tbody>
+              <tbody>
                 <tr>
-                  <td>3</td>
-                  <td colSpan={2}>Larry the Bird</td>
-                  <td>@twitter</td>
+                  <td>
+                    <BiPhoneCall />
+                  </td>
+                  <td>Phone</td>
+                  <td>9876543210</td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr>
+                  <td>
+                    <BiPhoneCall />
+                  </td>
+                  <td>Phone</td>
+                  <td>9876543210</td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr>
+                  <td>
+                    <BiPhoneCall />
+                  </td>
+                  <td>Phone</td>
+                  <td>9876543210</td>
                 </tr>
               </tbody>
             </Table>
