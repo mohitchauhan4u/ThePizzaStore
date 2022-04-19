@@ -1,6 +1,7 @@
 import React from "react";
-import { Container, Row, Col, Table } from "react-bootstrap";
+import { Container, Row, Col, Table, Image } from "react-bootstrap";
 import { BiPhoneCall } from "react-icons/bi";
+
 // Rember to add CountQueuingStrategy, State, distrcit wise serach filter for contact information
 const Contact = () => {
   return (
@@ -72,6 +73,12 @@ const Contact = () => {
                 </tr>
               </tbody>
             </Table>
+          </Col>
+          <Col md={6}>
+            <Image
+              src="images/farmhouse.jpg"
+              style={{ width: "100%", height: "30%" }}
+            />
           </Col>
         </Row>
       </Container>
