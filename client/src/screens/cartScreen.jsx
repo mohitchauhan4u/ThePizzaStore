@@ -1,6 +1,7 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { useSelector } from "react-redux";
+import { FaMinusCircle, FaPlusCircle } from "react-icons/fa";
 const CartScreen = () => {
   const cartState = useSelector((state) => state.cartReducer);
   const cartItems = cartState.cartItems;
@@ -22,7 +23,12 @@ const CartScreen = () => {
                       Price: {item.quantity} X {item.prices[0][item.varient]}={" "}
                       {item.price}
                     </h6>
-                    <h6>Quantity : {item.quantity}</h6>
+                    <h6>
+                      Quantity :&nbsp;
+                      <FaMinusCircle className="text-danger" />
+                      &nbsp; {item.quantity}&nbsp;
+                      <FaPlusCircle className="text-success" />
+                    </h6>
                   </Col>
                   <Col md={5}>
                     <img
@@ -31,6 +37,7 @@ const CartScreen = () => {
                       style={{ width: "80px", height: "60px" }}
                     />
                   </Col>
+                  <hr />
                 </>
               ))}
             </Row>
