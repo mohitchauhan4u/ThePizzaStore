@@ -17,9 +17,20 @@ const CartScreen = () => {
                     <h5>
                       {item.name} [{item.varient}]
                     </h5>
-                    <h6></h6>
+                    <h6>
+                      {" "}
+                      Price: {item.quantity} X {item.prices[0][item.varient]}={" "}
+                      {item.price}
+                    </h6>
+                    <h6>Quantity : {item.quantity}</h6>
                   </Col>
-                  <Col md={5}></Col>
+                  <Col md={5}>
+                    <img
+                      alt={item.name}
+                      src={item.image}
+                      style={{ width: "80px", height: "60px" }}
+                    />
+                  </Col>
                 </>
               ))}
             </Row>
