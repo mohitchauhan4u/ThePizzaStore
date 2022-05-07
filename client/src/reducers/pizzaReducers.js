@@ -3,14 +3,17 @@ export const getAllPizzaReducer = (state = {}, action) => {
     case "GET_PIZZAS_REQUEST":
       return {
         ...state,
+        loading: true,
       };
     case "GET_PIZZAS_SUCCESS":
       return {
         pizzas: action.payload,
+        loading: false,
       };
     case "GET_PIZZAS_FAIL":
       return {
         error: action.payload,
+        loading: false,
       };
     default:
       return state;
