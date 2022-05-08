@@ -57,7 +57,13 @@ const CartScreen = () => {
                       src={item.image}
                       style={{ width: "80px", height: "60px" }}
                     />
-                    <FaTrash />
+                    <FaTrash
+                      className="text-danger"
+                      style={{ cursor: "pointer", marginLeft: "20px" }}
+                      onClick={() => {
+                        dispatch(deleteFromCart(item));
+                      }}
+                    />
                   </Col>
                   <hr />
                 </>
