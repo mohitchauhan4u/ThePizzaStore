@@ -2,8 +2,8 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 // import { useSelector } from "react-redux";
 import { useSelector, useDispatch } from "react-redux";
-import { FaMinusCircle, FaPlusCircle } from "react-icons/fa";
-import { addToCart } from "../actions/cartAction";
+import { FaMinusCircle, FaPlusCircle, FaTrash } from "react-icons/fa";
+import { addToCart, deleteFromCart } from "../actions/cartAction";
 const CartScreen = () => {
   const cartState = useSelector((state) => state.cartReducer);
   const cartItems = cartState.cartItems;
@@ -57,6 +57,7 @@ const CartScreen = () => {
                       src={item.image}
                       style={{ width: "80px", height: "60px" }}
                     />
+                    <FaTrash />
                   </Col>
                   <hr />
                 </>
