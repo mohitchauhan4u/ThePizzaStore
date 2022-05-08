@@ -19,6 +19,9 @@ const NavBar = () => {
               <LinkContainer to="/login">
                 <Nav.Link>Login</Nav.Link>
               </LinkContainer>
+              <LinkContainer to="/register">
+                <Nav.Link>Register</Nav.Link>
+              </LinkContainer>
               <LinkContainer to="/cart">
                 <Nav.Link>Cart {cartState.cartItems.length}</Nav.Link>
               </LinkContainer>
