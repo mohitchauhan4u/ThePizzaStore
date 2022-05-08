@@ -27,7 +27,7 @@ router.post("/login", async (req, res) => {
         name: user[0].name,
         email: user[0].email,
         isAdmin: user[0].isAdmin,
-        _id: user[0]._id,
+        _id: user[0].Id,
       };
       res.status(200).send(currentUser);
     } else {
@@ -37,7 +37,7 @@ router.post("/login", async (req, res) => {
     }
   } catch (error) {
     res.status(404).json({
-      message: "Something went wrong",
+      message: "Something Went wrong",
     });
   }
 });
