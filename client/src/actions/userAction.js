@@ -8,3 +8,16 @@ export const registerUser = (user) => async (dispatch) => {
     dispatch({ type: "USER_REGISTER_FAIL", payload: error });
   }
 };
+
+export const loginUser = (user) => async (dispatch) => {
+  dispatch({ type: "USER_LOGIN_REQUEST" });
+  try {
+    const res = axios.post("/api/users/login", user);
+    console.log(res);
+    dispatch({ type: "USER_LOGIN_SUCCESS", payload: (await res).data });
+    localStorage.setItem("currentUser", JSON.stringify(res.data));
+    window.location.href = "/";
+  } catch (error) {
+    dispatch({ type: "USER_LOGIN_FAIL", payload: error });
+  }
+};
