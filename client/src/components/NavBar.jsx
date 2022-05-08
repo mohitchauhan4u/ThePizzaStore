@@ -28,7 +28,7 @@ const NavBar = () => {
                     </NavDropdown.Item>
                     <NavDropdown.Item
                       onClick={() => {
-                        dispatch(logoutUser);
+                        dispatch(logoutUser());
                       }}
                     >
                       Logout
