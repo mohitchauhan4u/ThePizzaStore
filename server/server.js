@@ -18,6 +18,7 @@ app.use(morgan("dev"));
 
 //route
 app.use("/api/pizzas", require("./routes/pizzaRoute"));
+app.use("/api/users", require("./routes/userRoutes"));
 app.get("/", (req, res) => {
   res.send("<h1>Hello h node server ki taraf se bhai ko</h1>");
 });
