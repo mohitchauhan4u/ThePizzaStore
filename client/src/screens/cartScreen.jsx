@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Button } from "react-bootstrap";
 // import { useSelector } from "react-redux";
 import { useSelector, useDispatch } from "react-redux";
 import { FaMinusCircle, FaPlusCircle, FaTrash } from "react-icons/fa";
@@ -8,6 +8,7 @@ const CartScreen = () => {
   const cartState = useSelector((state) => state.cartReducer);
   const cartItems = cartState.cartItems;
   const dispatch = useDispatch();
+  const subTotal = cartItems.reduce((x, item) => x + item.price, 0);
   return (
     <>
       <Container>
@@ -72,6 +73,9 @@ const CartScreen = () => {
           </Col>
           <Col md={4}>
             <h1>Payment Info</h1>
+            <h4>Sub Total</h4>
+            <h4>Rs : {subTotal}/-</h4>
+            <Button>Checkout</Button>
           </Col>
         </Row>
       </Container>
