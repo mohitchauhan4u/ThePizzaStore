@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Container, Row, Col } from "react-bootstrap";
 import Pizza from "../components/Pizza";
 import { getAllPizzas } from "../actions/pizzaAction";
+import Loader from "../components/Loader";
 
 const HomeScreen = () => {
   const dispatch = useDispatch();
@@ -15,7 +16,7 @@ const HomeScreen = () => {
     <>
       <Container>
         {loading ? (
-          <h1>Loading...</h1>
+          <Loader />
         ) : error ? (
           <h1>Error while fetching pizzas {error}</h1>
         ) : (
