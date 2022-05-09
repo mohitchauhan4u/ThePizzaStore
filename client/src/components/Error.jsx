@@ -1,8 +1,8 @@
 import React from "react";
 import { Alert } from "react-bootstrap";
 
-const Error = () => {
-  return <Alert variant="danger" />;
+const Error = ({ error }) => {
+  return <Alert variant="danger">{error}</Alert>;
 };
 
 export default Error;
