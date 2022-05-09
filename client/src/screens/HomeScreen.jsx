@@ -4,6 +4,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import Pizza from "../components/Pizza";
 import { getAllPizzas } from "../actions/pizzaAction";
 import Loader from "../components/Loader";
+import Error from "../components/Error";
 
 const HomeScreen = () => {
   const dispatch = useDispatch();
@@ -18,7 +19,7 @@ const HomeScreen = () => {
         {loading ? (
           <Loader />
         ) : error ? (
-          <h1>Error while fetching pizzas {error}</h1>
+          <Error>Error while fetching pizzas {error}</Error>
         ) : (
           <Row>
             {pizzas.map((pizza) => (
