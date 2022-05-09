@@ -1,6 +1,8 @@
 import React from "react";
 import { Button } from "react-bootstrap";
 import StripeCheckout from "react-stripe-checkout";
+import { useDispatch } from "react-redux";
+
 const Checkout = ({ subTotal }) => {
   const tokenHandler = (token) => {
     console.log(token);
