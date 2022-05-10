@@ -10,6 +10,7 @@ import CartScreen from "./screens/cartScreen";
 import Register from "./screens/Register";
 import Login from "./screens/Login";
 import OrderScreen from "./screens/OrderScreen";
+import AdminScreen from "./screens/AdminScreen";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <TopBar />
       <NavBar />
       <Switch>
+        <Route exact path="/admin" component={AdminScreen}></Route>
         <Route exact path="/cart" component={CartScreen}></Route>
         <Route exact path="/orders" component={OrderScreen}></Route>
         <Route exact path="/login" component={Login}></Route>
