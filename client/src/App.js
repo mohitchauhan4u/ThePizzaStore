@@ -9,6 +9,7 @@ import HomeScreen from "./screens/HomeScreen";
 import CartScreen from "./screens/cartScreen";
 import Register from "./screens/Register";
 import Login from "./screens/Login";
+import OrderScreen from "./screens/OrderScreen";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <NavBar />
       <Switch>
         <Route exact path="/cart" component={CartScreen}></Route>
+        <Route exact path="/orders" component={OrderScreen}></Route>
         <Route exact path="/login" component={Login}></Route>
         <Route exact path="/register" component={Register}></Route>
         <Route exact path="/about" component={About}></Route>
