@@ -6,6 +6,7 @@ const Stripe = require("stripe");
 const stripe = Stripe(
   "sk_test_51KxVHeSEP6FLIygg7QBKnV94Mj94cu38vqJV3AZu3jgaLpoa5ZHjUM5YdZe1RpPrAI2ZaOA5B0Zf6XJNAkdEhMEG00m6TFYLHF"
 );
+const Order = require("../models/orderModel");
 
 router.post("/placeorder", async (req, res) => {
   const { token, subTotal, currentUser, cartItems } = req.body;
@@ -29,6 +30,21 @@ router.post("/placeorder", async (req, res) => {
       }
     );
     if (payment) {
+      const newOrder = new Order({
+        name: currentUser.name,
+        email: currentUser.email,
+        userid: currentUser._id,
+        orderItems: cartItems,
+        orderAmount: subTotal,
+        shippingAddress: {
+          street: token.card.address_line1,
+          city: token.card.address_city,
+          country: token.card.address_country,
+          picode: token.card.address_zip,
+        },
+        transectionId: payment.source.id,
+      });
+      newOrder.save();
       res.send("payment successful");
     } else {
       res.send("payment failed");
