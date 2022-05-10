@@ -18,7 +18,7 @@ function App() {
       <TopBar />
       <NavBar />
       <Switch>
-        <Route exact path="/admin" component={AdminScreen}></Route>
+        <Route path="/admin" component={AdminScreen}></Route>
         <Route exact path="/cart" component={CartScreen}></Route>
         <Route exact path="/orders" component={OrderScreen}></Route>
         <Route exact path="/login" component={Login}></Route>
