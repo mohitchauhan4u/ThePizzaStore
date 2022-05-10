@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Container, Row, Col, Button, ButtonGroup } from "react-bootstrap";
+import { useSelector } from "react-redux";
 import { Route, Switch } from "react-router-dom";
 import AddNewPizza from "../components/Admin/AddNewPizza";
 import OrderList from "../components/Admin/OrderList";
@@ -7,6 +8,13 @@ import PizzaList from "../components/Admin/PizzaList";
 import UserList from "../components/Admin/UserList";
 
 const AdminScreen = ({ history }) => {
+  const userState = useSelector((state) => state.loginUserReducer);
+  const { currentUser } = userState;
+  useEffect(() => {
+    if (localStorage.getItem("currentUser") === null || !currentUser.isAdmin) {
+      window.location.href = "/";
+    }
+  }, [currentUser]);
   return (
     <>
       <>
