@@ -30,4 +30,14 @@ router.post("/addpizza", async (req, res) => {
   }
 });
 
+router.post("/getpizzabyid", async (req, res) => {
+  const pizzaId = req.body.pizzaId;
+  try {
+    const pizza = await pizzaModel.findOne({ _id: pizzaId });
+    res.send(pizza);
+  } catch (error) {
+    res.json({ message: error });
+  }
+});
+
 module.exports = router;

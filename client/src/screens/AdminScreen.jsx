@@ -3,6 +3,7 @@ import { Container, Row, Col, Button, ButtonGroup } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import { Route, Switch } from "react-router-dom";
 import AddNewPizza from "../components/Admin/AddNewPizza";
+import EditPizza from "../components/Admin/EditPizza";
 import OrderList from "../components/Admin/OrderList";
 import PizzaList from "../components/Admin/PizzaList";
 import UserList from "../components/Admin/UserList";
@@ -51,6 +52,11 @@ const AdminScreen = ({ history }) => {
             </Col>
             <Col md={10}>
               <Switch>
+                <Route
+                  path="/admin/editpizza"
+                  component={EditPizza}
+                  exact
+                ></Route>
                 <Route path="/admin" component={UserList} exact></Route>
                 <Route
                   path="/admin/userlist"
