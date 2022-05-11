@@ -21,7 +21,7 @@ const AdminScreen = ({ history }) => {
         <Container>
           <Row>
             <h1 className="text-center bg-dark text-light p-2">Admin Panel</h1>
-            <Col md={4}>
+            <Col md={2}>
               <ButtonGroup vertical style={{ minHeight: "400px" }}>
                 <Button
                   style={{ margin: "5px" }}
@@ -49,7 +49,7 @@ const AdminScreen = ({ history }) => {
                 </Button>
               </ButtonGroup>
             </Col>
-            <Col md={8}>
+            <Col md={10}>
               <Switch>
                 <Route path="/admin" component={UserList} exact></Route>
                 <Route
