@@ -1,7 +1,7 @@
 import { combineReducers, applyMiddleware, createStore } from "redux";
 import thunk from "redux-thunk";
 import { composeWithDevTools } from "redux-devtools-extension";
-import { getAllPizzaReducer } from "./reducers/pizzaReducers";
+import { getAllPizzaReducer, addPizzaReducer } from "./reducers/pizzaReducers";
 import { cartReducer } from "./reducers/cardReducer";
 import { registerUserReducer, loginUserReducer } from "./reducers/userReducer";
 import {
@@ -23,6 +23,7 @@ const rootReducer = combineReducers({
   loginUserReducer: loginUserReducer,
   placeOrderReducer: placeOrderReducer,
   getUserOrdersReducer: getUserOrdersReducer,
+  addPizzaReducer: addPizzaReducer,
 });
 const initialState = {
   cartReducer: {

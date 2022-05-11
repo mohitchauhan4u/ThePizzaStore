@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Form, Row, Col, Button } from "react-bootstrap";
-import { useSelector } from "react-redux";
+import { addPizza } from "../../actions/pizzaAction";
+import { useDispatch, useSelector } from "react-redux";
 import Loader from "./../Loader";
 import Error from "./../Error";
 import Success from "./../Success";
@@ -16,6 +17,8 @@ const AddNewPizza = () => {
   const addPizzaState = useSelector((state) => state.addPizzaReducer);
   const { loading, error, success } = addPizzaState;
 
+  const dispatch = useDispatch();
+
   const submitForm = (e) => {
     e.preventDefault();
     const pizza = {
@@ -29,6 +32,7 @@ const AddNewPizza = () => {
         larg: largprice,
       },
     };
+    dispatch(addPizza(pizza));
   };
   return (
     <div>
