@@ -1,4 +1,5 @@
 import axios from "axios";
+import swal from "sweetalert";
 
 export const getAllPizzas = () => async (dispatch) => {
   dispatch({ type: "GET_PIZZAS_REQUEST" });
@@ -39,5 +40,15 @@ export const updatePizza = (updatedPizza) => async (dispatch) => {
     window.location.href = "/admin/pizzalist";
   } catch (err) {
     dispatch({ type: "UPDATE_PIZZABYID_FAIL", payload: err });
+  }
+};
+export const deletePizza = (pizzaId) => async (dispatch) => {
+  try {
+    await axios.post("/api/pizzas/deletepizza", { pizzaId });
+    swal("Pizza Deleted Succss!", "success");
+    window.location.href = "/admin/pizzalist";
+    // console.log(res);
+  } catch (error) {
+    swal("Errro While Deleteing Pizza");
   }
 };

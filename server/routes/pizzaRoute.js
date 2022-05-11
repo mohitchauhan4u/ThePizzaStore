@@ -55,4 +55,13 @@ router.post("/updatepizza", async (req, res) => {
     res.status(400).json({ message: error });
   }
 });
+router.post("/deletepizza", async (req, res) => {
+  const pizzaId = req.body.pizzaId;
+  try {
+    await pizzaModel.findOneAndDelete({ _id: pizzaId });
+    res.status(200).send("Pizza Deleted");
+  } catch (error) {
+    res.status(404).json({ message: error });
+  }
+});
 module.exports = router;
