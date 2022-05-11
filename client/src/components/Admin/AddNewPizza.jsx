@@ -47,7 +47,7 @@ const AddNewPizza = () => {
               type="text"
               value={name}
               onChange={(e) => setname(e.target.value)}
-              placeholder="Enter email"
+              placeholder="Enter name"
             />
           </Form.Group>
           <Row className="mb-3 mt-3">
