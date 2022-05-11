@@ -8,7 +8,11 @@ import {
   updatePizzaByIdReducer,
 } from "./reducers/pizzaReducers";
 import { cartReducer } from "./reducers/cardReducer";
-import { registerUserReducer, loginUserReducer } from "./reducers/userReducer";
+import {
+  registerUserReducer,
+  loginUserReducer,
+  getAllUsersReducer,
+} from "./reducers/userReducer";
 import {
   placeOrderReducer,
   getUserOrdersReducer,
@@ -33,6 +37,7 @@ const rootReducer = combineReducers({
   getPizzaByIdReducer: getPizzaByIdReducer,
   updatePizzaByIdReducer: updatePizzaByIdReducer,
   allUserOrdersReducer: allUserOrdersReducer,
+  getAllUsersReducer: getAllUsersReducer,
 });
 const initialState = {
   cartReducer: {
