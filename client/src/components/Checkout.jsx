@@ -26,7 +26,7 @@ const Checkout = ({ subTotal }) => {
         stripeKey="pk_test_51KxVHeSEP6FLIyggEWYhuUXPNtcz3JnPIYYRoc2L0EWZNPvGGpBZj60tOHEBKiuQl97wBwldo7ycPwm4t8syqCAX00vRWsKHmK"
         currency="INR"
       >
-        <Button>Pay Now</Button>
+        <Button type="primary">Pay Now</Button>
       </StripeCheckout>
     </>
   );
