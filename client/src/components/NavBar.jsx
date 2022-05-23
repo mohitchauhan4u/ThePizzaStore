@@ -1,5 +1,5 @@
 import React from "react";
-import { Navbar, Nav, Container, Image, NavDropdown } from "react-bootstrap";
+import { Navbar, Nav, Container, NavDropdown } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 // import { useSelector } from "react-redux";
@@ -14,7 +14,7 @@ const NavBar = () => {
       <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
         <Container>
           <Navbar.Brand>
-            <Image src="images/logo.png" style={{ height: "50px" }} />
+            <h4>The Pizza Store</h4>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
